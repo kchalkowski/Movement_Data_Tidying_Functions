@@ -4,7 +4,7 @@ This is just a collection of some random R functions I made that other folks may
 
 ## NeatDates    
 
-`NeatDates` takes a vector of datetimes, and returns a vector formatted "MM/DD/YYYY HH\:MM:SS", to cleanly pass on to datetime formats in R such as `as.POSIXct()`    
+`NeatDates` takes a vector of datetimes, and uses regex to return a vector formatted "MM/DD/YYYY HH\:MM:SS", to cleanly pass on to datetime formats in R such as `as.POSIXct()`    
 
  **What it does:**     
   
