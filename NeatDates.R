@@ -1,24 +1,3 @@
-#test:
-#td.input=geo$datetime
-#td.input=temp$datetime
-#td.input<-geolocs$datetime
-#Input a vector of datetimes with different formats, returns vector of datetimes in character format, with same structure
-
-#assumptions of function:
-#organized date space time (ie 2023-02-14 05:55:02)
-#separators in dates are all same (ie 2023-02-13 OR 2023/02/13, NOT 2023/02-13)
-#dates are month-day-year
-
-#assumptions of function:
-#organized as date space time (ie 2023-02-14 05:55:02)
-#separators in dates are all same (ie 2023-02-13 OR 2023/02/13, NOT 2023/02-13)
-#dates are month-day-year
-
-#Can handle:
-#if some in vector are 24 hr, some 12 hr (with AM PM)
-#year in front or back of date
-#mixed double and single digits for month/day
-
 NeatDates<-function(td.input){
   if(all(is.na(td.input))){return(td.input)
   } else{
@@ -153,8 +132,6 @@ Neat.Dates.POSIXct<-function(td.input,tz){
 }
 
 
-#td.input<-geolocs.t5$datetime
-
 #Input a vector of datetimes with different formats, returns vector of datetimes in POSIXct format, with same structure
 Neat.Dates.POSIXct<-function(td.input,tz){
   if(all(is.na(td.input))){return(td.input)
@@ -169,18 +146,3 @@ Neat.Dates.POSIXct<-function(td.input,tz){
   }
 }
 
-#length(geolocs$datetime)
-#length(neat.dates)
-
-#neat.dates=NeatDates(geolocs$datetime)
-#as.POSIXct(geolocs$datetime[236086:236087],tz=tz,tryFormats=c("%m/%d/%Y %H:%M:%OS",
-#                                                            "%m/%d/%Y %H:%M:%S",
-#                                                            "%m/%d/%Y %H:%M",
-#                                                            "%m/%d/%Y"))
-#as.POSIXct(geolocs$datetime[236088:236089],tz=tz,tryFormats=c("%m/%d/%Y %H:%M:%OS",
-#                                                        "%m/%d/%Y %H:%M:%S",
-#                                                        "%m/%d/%Y %H:%M",
-#                                                        "%m/%d/%Y"))
-#236087-236088
-#geolocs[236088,]
-#neat.dates[236088,]
