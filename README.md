@@ -2,9 +2,9 @@
 
 This is just a collection of some random R functions I made that other folks may find helpful for tidying movement data
 
-`NeatDates`    
+### NeatDates    
 
-Takes a vector of datetimes, and returns a vector formatted "MM/DD/YYYY HH\:MM:SS", to cleanly pass on to datetime formats in R such as `as.POSIXct()`    
+`NeatDates` takes a vector of datetimes, and returns a vector formatted "MM/DD/YYYY HH\:MM:SS", to cleanly pass on to datetime formats in R such as `as.POSIXct()`    
 
  **What it does:**     
   
@@ -28,9 +28,9 @@ Takes a vector of datetimes, and returns a vector formatted "MM/DD/YYYY HH\:MM:S
     times=c("2007-10-31", "2008/04/20", "02/04/12")
     NeatDates(times)
 
-`Neat.Dates.POSIXct`   
+## Neat.Dates.POSIXct
 
-Does everything NeatDates does, but also passes output into `as.POSIXct()`. Requires timezone.
+`Neat.Dates.POSIXct` does everything NeatDates does, but also passes output into `as.POSIXct()`. Requires timezone.
 
 **Use:**
 
