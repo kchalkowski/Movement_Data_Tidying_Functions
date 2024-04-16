@@ -118,20 +118,6 @@ NeatDates<-function(td.input){
 }
 
 
-Neat.Dates.POSIXct<-function(td.input,tz){
-  if(all(is.na(td.input))){return(td.input)
-  } else{
-    neat.dates<-NeatDates(td.input)
-    neat.dates.posixct=as.POSIXct(neat.dates,tz=tz,tryFormats=c("%m/%d/%Y %H:%M:%OS",
-                                                                "%m/%d/%Y %H:%M:%S",
-                                                                "%m/%d/%Y %H:%M",
-                                                                "%m/%d/%Y"))
-    
-    return(neat.dates.posixct)
-  }
-}
-
-
 #Input a vector of datetimes with different formats, returns vector of datetimes in POSIXct format, with same structure
 Neat.Dates.POSIXct<-function(td.input,tz){
   if(all(is.na(td.input))){return(td.input)
