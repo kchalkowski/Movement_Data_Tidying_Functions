@@ -1,0 +1,17 @@
+
+#Converts set of geolocations into telemetry format. You'll need to change the column names in the function to match your data
+Convert.Telemetry<-function(geolocs){
+  id.n=which(colnames(geolocs)=="animalid") #unique id of animal
+  id.t=which(colnames(geolocs)=="datetime") #name of datetime column (needs be in POSIXct)
+  id.lon=which(colnames(geolocs)=="latitude") #name of latitude column
+  id.lat=which(colnames(geolocs)=="longitude") #name of longitude column
+  tk=geolocs[,c(id.n,id.t,id.lon,id.lat)]
+  colnames(tk)<-c("ID","timestamp","longitude","latitude")
+  #crs_str="+proj=utm +zone=14 +ellps=WGS84 +datum=WGS84 +units=m +no_defs" #optional, can output with specific projection
+  #crs_str="+proj=aea +lat_0=23 +lon_0=-96 +lat_1=29.5 +lat_2=45.5 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs "
+  #te1 <- ctmm::as.telemetry(tk,projection=crs_str)
+  te1 <- ctmm::as.telemetry(tk)
+  
+  return(te1)
+}
+
